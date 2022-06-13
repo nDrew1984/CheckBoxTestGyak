@@ -38,4 +38,26 @@ public class CheckBoxTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void RadioButtonTest() {
+        RadioButton radioButton = new RadioButton(driver);
+        radioButton.navigate();
+        radioButton.clickMaleButton();
+        radioButton.clickGetCheckedValueButton();
+
+        String actualMale = radioButton.getResult();
+        String expectedMale = "Radio button 'Male' is checked";
+
+        Assertions.assertEquals(expectedMale, actualMale);
+
+        radioButton.clickFemaleButton();
+        radioButton.clickGetCheckedValueButton();
+
+        String actualFemale = radioButton.getResult();
+        String expectedFemale = "Radio button 'Female' is checked";
+
+        Assertions.assertEquals(expectedFemale, actualFemale);
+
+    }
 }
